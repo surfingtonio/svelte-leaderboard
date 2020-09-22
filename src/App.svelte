@@ -10,6 +10,9 @@
 
   // A reactive list of sorted users
   $: sortedUsers = users.sort((a, b) =>
+    // Basically, what this ternary does is
+    // if the scores are equal, compare the names
+    // otherwise compare scores.
     a.score === b.score
       ? a.name.localeCompare(b.name)
       : a.score > b.score
@@ -45,22 +48,31 @@
     margin: 5rem auto 0;
     padding: 2rem;
     width: 20rem;
-    text-align: center;
   }
   .leaderboard__item {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0.5rem 0;
+    padding: 0.25rem;
   }
   .leaderboard__user {
-    display: inline-block;
-    width: 5rem;
+    text-align: left;
+    width: 30%;
   }
   .leaderboard__score {
-    display: inline-block;
-    margin-left: 2rem;
+    text-align: right;
+    width: 30%;
+  }
+  .leaderboard__buttons {
+    display: flex;
+    justify-content: center;
+    width: 30%;
   }
   .leaderboard__button {
     height: 2rem;
     line-height: 1;
-    text-align: center;
+    margin: 0;
     width: 2rem;
   }
 </style>
@@ -71,15 +83,17 @@
       {#each sortedUsers as user}
         <li class="leaderboard__item">
           <span class="leaderboard__user">{user.name}</span>
-          <button on:click={step(user.id, 1)} class="leaderboard__button">
-            +
-          </button>
-          <button
-            on:click={step(user.id, -1)}
-            class="leaderboard__button"
-            disabled={user.score < 1}>
-            -
-          </button>
+          <div class="leaderboard__buttons">
+            <button on:click={step(user.id, 1)} class="leaderboard__button">
+              +
+            </button>
+            <button
+              on:click={step(user.id, -1)}
+              class="leaderboard__button"
+              disabled={user.score < 1}>
+              -
+            </button>
+          </div>
           <span class="leaderboard__score">
             {user.score} {user.score === 1 ? 'point' : 'points'}
           </span>
