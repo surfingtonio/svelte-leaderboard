@@ -1,4 +1,6 @@
 <script>
+  import { flip } from "svelte/animate";
+
   // List of users and their scores
   let users = [
     { id: 1, name: "Emma", score: 0 },
@@ -75,7 +77,7 @@
     color: #fff;
     height: 2rem;
     line-height: 1;
-    margin: 0 .1rem;
+    margin: 0 0.1rem;
     width: 2rem;
   }
   .leaderboard__button--disabled {
@@ -88,8 +90,8 @@
 <main>
   <ul class="leaderboard">
     {#if users.length > 0}
-      {#each sortedUsers as user}
-        <li class="leaderboard__item">
+      {#each sortedUsers as user (user.id)}
+        <li class="leaderboard__item" animate:flip={{ duration: 200 }}>
           <span class="leaderboard__user">{user.name}</span>
           <div class="leaderboard__buttons">
             <button on:click={step(user.id, 1)} class="leaderboard__button">
