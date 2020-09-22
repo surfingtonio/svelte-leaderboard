@@ -70,10 +70,18 @@
     width: 30%;
   }
   .leaderboard__button {
+    background: #007bff;
+    border: 1px solid #007bff;
+    color: #fff;
     height: 2rem;
     line-height: 1;
-    margin: 0;
+    margin: 0 .1rem;
     width: 2rem;
+  }
+  .leaderboard__button--disabled {
+    background: #eee;
+    border: 1px solid #ccc;
+    color: #ccc;
   }
 </style>
 
@@ -90,6 +98,7 @@
             <button
               on:click={step(user.id, -1)}
               class="leaderboard__button"
+              class:leaderboard__button--disabled={user.score < 1}
               disabled={user.score < 1}>
               -
             </button>
