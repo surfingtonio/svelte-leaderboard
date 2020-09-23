@@ -1,15 +1,14 @@
 # svelte-leaderboard
-
 Solution for Canada Drives assignment.
 
 ## Self-rebalancing leaderboard
 
 **Requirements:**
 
-- You have 5 users showing in a leaderboard
-- All users start with 0 points
-- As you click +/-, the leaderboard updates and users are re-ordered based on score
-- Names sorted alphabetically if they are tied
+ - You have 5 users showing in a leaderboard
+ - All users start with 0 points
+ - As you click +/-, the leaderboard updates and users are re-ordered based on score
+ - Names sorted alphabetically if they are tied
 
 **Guideline:**
 
@@ -21,24 +20,23 @@ Solution for Canada Drives assignment.
 
 ## Get started
 
-Install the dependencies...
+  Install the dependencies...
 
 ```bash
-
 cd svelte-leaderboard
-
 npm install
-
 ```
-
 ...then start [Rollup](https://rollupjs.org):
 
 ```bash
-
 npm run dev
-
 ```
-
 Navigate to [localhost:5000](http://localhost:5000). You should see your app running.
 
-https://svelte.dev/repl/e8309a4ea2654eb09e96f6ea641d330e?version=3.26.0
+See online demo at:
+
+Single component app
+https://bit.ly/3couGFY
+
+ App split into components
+https://bit.ly/2RPyG9b
