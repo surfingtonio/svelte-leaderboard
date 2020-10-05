@@ -3,7 +3,6 @@
 
   export let user;
   const dispatch = createEventDispatcher();
-
 </script>
 
 <style>
@@ -31,6 +30,7 @@
     background: #007bff;
     border: 1px solid #007bff;
     color: #fff;
+    cursor: pointer;
     height: 2rem;
     line-height: 1;
     margin: 0 0.1rem;
@@ -40,6 +40,7 @@
     background: #eee;
     border: 1px solid #ccc;
     color: #ccc;
+    cursor: auto;
   }
 </style>
 

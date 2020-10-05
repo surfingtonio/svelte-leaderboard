@@ -23,7 +23,10 @@
 
 <style>
   .leaderboard {
-    border: 1px solid #000;
+    border: 1px solid #bbb;
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 10px #777;
+    font-family: Arial, Helvetica, sans-serif;
     list-style: none;
     margin: 5rem auto 0;
     padding: 2rem;
